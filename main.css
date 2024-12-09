@@ -1,0 +1,212 @@
+html{
+    font-size: 78.5%;   
+}
+body{
+    margin: 10;
+    background-color:lavender;
+}
+.wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* navbar*/
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+nav{
+    margin: 2em;
+}
+nav ul{
+    list-style-type: none;
+    display: flex;
+    gap: 4.1em;
+}
+nav a{
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    position: relative;
+}
+nav a.active:before{
+    position: absolute;
+    content: "";
+    width: 40%;
+    height: 1px;
+    border-bottom: 2px dotted black;
+    bottom: -4px;
+}
+nav ul li a:before{
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 1px;
+    border-bottom: 2px solid rgb(14, 14, 14);
+    bottom: -4px;
+    transition: width .3s;
+}
+/* hero section*/
+main{
+    display: flex;
+    gap: 8em;
+    margin-top: 5em;
+}
+.left-col{
+    width: 45%;
+    
+}
+.right-col{
+    flex-grow: 1;
+}
+h1{
+    font-size: 5.2rem;
+    font-weight: normal;
+    margin: auto;
+}
+.subhead{
+    font-size: 1.6rem;
+}
+.cta-btns{
+    margin: 5em 0;
+}
+.cta-btns{
+    display: flex;
+    gap: 6em;
+}
+.primary-cta{
+    padding: 4em 3em ;
+    background-color: bisque;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    border-radius: 6em;
+
+}
+.secondary-cta{
+    padding: 4em 3em ;
+    background-color: bisque;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    display: block;
+    align-items: center;
+    border-radius: 6em;
+
+}
+.secondary-cta svg{
+    width: 20px;
+    display:inline-flex;
+    transition: transform .3s;
+
+}
+.news{
+    display: flex;
+    background-color: lavenderblush;
+    gap: 3em;
+    padding: 5em;
+    border: 1px solid black;
+    border-radius: 6em;
+    position: relative;
+}
+
+p.employees{
+    font-size: 3.3rem;
+    margin: 0;
+    font-weight: bolder;
+    line-height: -20%;
+}
+p.details{
+    font-size: medium;
+    margin: 0;
+}
+/* right coloumn gallery*/
+.right-col{
+    display: grid;
+    gap: 2.3em;
+    grid-template-columns: repeat(2,auto);
+    grid-template-areas:
+    "left ."
+    "left ." ;
+}
+.card{
+    border-radius: 5em;
+    padding: 1.1em;
+    display: flex;
+    align-items: end;
+    background-size: 150%;
+    transition: background-size 800ms;
+}
+.card1{
+    grid-area: left;
+    background-image:url('../shoes.jpg') ;
+    position: relative;
+}
+.card2{
+    
+    background-image: url('../jacket.jpg');
+}
+.card3{
+    
+    background-image: url('../jeans.jpg');
+}
+.card-details{
+    background: whitesmoke;
+    border-radius: 3em;
+    padding: 2em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 800ms;
+}
+.card-details a{
+    color: black;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.card-details p{
+    font-size: 1.4rem;
+    margin: 0;
+}
+p.product-price{
+    font-size: 1.8rem;
+}
+/*microinteractions*/
+nav ul li a:hover::before{
+    width:45%;
+}
+.primary-cta:hover{
+    background-color: rgb(228, 173, 53);
+}
+.secondary-cta:hover svg{
+    transform: translateX(10px);
+}
+.secondary-cta:hover{
+    background-color: rgb(228, 173, 53);
+}
+.secondary-cta:hover{
+    text-decoration: underline;
+}
+.card:hover{
+    background-size: 160%;
+}
+.card:hover .card-details{
+    transform: translateY(-20px);
+}
+
+
+main{
+    animation: growIn 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+    transform: scale(.4);
+}
+@keyframes growIn {
+    to{
+        transform: scale(1);
+    }
+}
